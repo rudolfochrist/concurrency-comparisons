@@ -44,6 +44,7 @@
             (t
              (format t "Barber is cutting hair~%")
              (decf *customers*)
+             ;; cutting hair takes a second here
              (sleep 1))))))
 
 (defun run ()

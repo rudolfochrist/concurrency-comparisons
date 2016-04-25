@@ -1,4 +1,4 @@
-;;; baber-bt.lisp
+;;; barber-bt.lisp
 
 (in-package :cl-user)
 (defpackage #:barber-bt
@@ -53,7 +53,7 @@
 
 (defun run ()
   (let ((out *standard-output*))
-    ;; create baber
+    ;; create barber
     (bt:make-thread
      (lambda ()
        (let ((*standard-output* out))

@@ -15,7 +15,6 @@
 (defparameter *open-business* t)
 
 (defvar *sleeping-barber* (bt:make-condition-variable))
-(defvar *sleeping-customer* (bt:make-condition-variable))
 
 (defun get-haircut (customer)
   (loop while *open-business*
@@ -26,14 +25,10 @@
              (format t "~A wakes up barber.~%" customer)
              (incf *customers*)
              (bt:condition-notify *sleeping-barber*)
-             (bt:condition-wait *sleeping-customer* *customer-lock*)
-             (format t "~A got a haircut.~%" customer)
              (return-from get-haircut)) 
             ((< 0 *customers* *chairs*)
              (format t "~A takes a seat and waits.~%" customer)
              (incf *customers*)
-             (bt:condition-wait *sleeping-customer* *customer-lock*)
-             (format t "~A got a haircut.~%" customer)
              (return-from get-haircut))
             (t
              (format t "All seats are taken. ~A leaves shop~%" customer)

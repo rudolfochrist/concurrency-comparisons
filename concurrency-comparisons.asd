@@ -11,7 +11,8 @@
   :bug-tracker "URL"
   :license "LLGPL"
   :serial t
-  :components ((:file "barber-bt")
+  :components ((:static-file "README.org")
+               (:file "barber-bt")
                (:file "car-park-bt")
                (:file "sync")
                (:file "web-service"))

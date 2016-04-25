@@ -1,0 +1,16 @@
+#+title: Concurrency Comparison
+
+Just some concurrency problems implemented with different concurrency libraries. Just for educational
+purposes. 
+
+* Running the examples
+
+- [[barber-bt.lisp]] 
+  : (barber-bt:run)
+- [[car-park-bt.lisp]]
+  : (car-park-bt:run)
+- [[sync.lisp]]
+  : (web-service:start-service :disable-loggin t)
+  : (sync:synchronous)
+  : (sync:asynchronous)
+  : (sync:using-plet)

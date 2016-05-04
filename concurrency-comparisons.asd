@@ -14,6 +14,7 @@
   :components ((:static-file "README.org")
                (:file "barber-bt")
                (:file "car-park-bt")
+               (:file "car-park-channel")
                (:file "sync")
                (:file "web-service"))
   :depends-on (:bordeaux-threads
